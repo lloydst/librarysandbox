@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='userName') User Name:
+      input#userName.form-control(type='text', placeholder='User Name' name='userName' required='true' )
+    div.form-group
+      label(for='password') Password:
+      input#password.form-control(type='password', placeholder='Select password' name='password' required='true' )
+    div.form-group
+      label(for='hasBook') Has Book:
+      select#status.form-control(type='select', placeholder='Select status' name='status' required='false' )
+        option(value='None') None
+        option(value='Returned') Returned
+        option(value='Loaned') Loaned
+        option(value='Reserved') Reserved
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg
