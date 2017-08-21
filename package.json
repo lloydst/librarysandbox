@@ -1,13 +1,18 @@
 {
   "name": "express-locallibrary-tutorial",
   "version": "0.0.2",
+  "main": "/bin/www",
+  "author": "lloydst",
+  "licence": "apache",
   "engines": {
     "node": "6.9.1"
   },
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "devstart": "nodemon ./bin/www"
+    "devstart": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "dependencies": {
     "async": "^2.1.4",
