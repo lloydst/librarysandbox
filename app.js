@@ -13,7 +13,8 @@ const users = require('./routes/users');
 const catalog = require('./routes/catalog'); //Import routes for "catalog" area of site
 const compression = require('compression');
 const helmet = require('helmet');
-
+const gulp = require('gulp');
+var pug = require('gulp-pug');
 
 // Create the Express application object
 var app = express();
@@ -80,6 +81,14 @@ app.get('/swagger.json', function(req, res) {
 app.get('/api-docs.json', function(req, res) { // line 41 
   res.setHeader('Content-Type', 'application/json');
   res.send(swaggerSpec);
+});
+
+
+gulp.task('views', function buildHTML() {
+  return gulp.src('/views/*.pug')
+  .pipe(pug({
+    // Your options in here.
+  }))
 });
 
 // catch 404 and forward to error handler
