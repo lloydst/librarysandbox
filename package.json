@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "async": "^2.1.4",
+    "auth0": "^2.7.0",
     "body-parser": "~1.15.2",
     "compression": "^1.6.2",
+    "connect-ensure-login": "^0.1.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
@@ -24,13 +26,17 @@
     "mongoose": "^4.7.1",
     "morgan": "~1.7.0",
     "passport": "^0.3.2",
+    "passport-auth0": "^0.6.0",
     "passport-stormpath": "^0.2.4",
     "pug": "~2.0.0-beta6",
     "serve-favicon": "~2.3.0",
     "static-favicon": "^2.0.0-alpha",
     "stormpath": "^0.20.1"
+    
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "swagger-jsdoc": "^1.9.7",
+    "swagger-ui-dist": "^3.1.5"
   }
 }

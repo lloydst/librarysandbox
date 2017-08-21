@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var passport = require('passport');
 
 // Require our controllers
 var book_controller = require('../controllers/bookController'); 
@@ -10,22 +10,66 @@ var book_instance_controller = require('../controllers/bookinstanceController');
 var user_controller = require('../controllers/userController');
 
 /// BOOK ROUTES ///
-
+/**
+ *  @swagger
+ *  /:
+ *    get:
+ *      operationId: index
+ *      responses:
+ *        200:
+ *          description: hello world
+ */
 /* GET catalog home page. */
 router.get('/', book_controller.index);  
-
-/* GET request for creating a Book. NOTE This must come before routes that display Book (uses id) */
-router.get('/book/create', book_controller.book_create_get);
-
-/* POST request for creating Book. */
-router.post('/book/create', book_controller.book_create_post);
-
-/* GET request to delete Book. */
-router.get('/book/:id/delete', book_controller.book_delete_get);
-
+/**
+ * @swagger
+ * /book/:id/delete:
+ *  post:
+ *      summary: deletes current book.
+ *      parameter:
+ *          - in: path
+ *            name: id
+ *            required: true
+ *            schema:
+ *              type: integer
+ *      description: gets book by id populates author, genre, from he document
+ *      responses:
+ *          "200":    
+ *              description: Succes!
+ *              content:
+ *                  "application/json":
+ *                      schema: 
+ *                          type: array
+ *                          items: 
+ *                              type: string
+ *      example:
+ *          
+ */
 // POST request to delete Book
 router.post('/book/:id/delete', book_controller.book_delete_post);
-
+/**
+ * @swagger
+ * /book/:id/update:
+ *  get:
+ *      summary: finds book by id, and the corresponding author/genre
+ *      parameter:
+ *          - in: path
+ *            name: id
+ *            required: true
+ *            schema:
+ *                type: integer
+ *      description: a description
+ *      responses:
+ *          200:
+ *              description: Succes
+ *              content: 
+ *                  "application/json":
+ *                      schema:
+ *                          type: array
+ *                          items:
+ *                              type: string
+ *               
+ */
 /* GET request to update Book. */
 router.get('/book/:id/update', book_controller.book_update_get);
 
