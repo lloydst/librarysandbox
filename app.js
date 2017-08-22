@@ -18,7 +18,7 @@ var pug = require('gulp-pug');
 
 // Create the Express application object
 var app = express();
-
+var env = require('.env')
 // swagger definition
 var swaggerDefinition = {
   info: {
