@@ -14,11 +14,12 @@ const catalog = require('./routes/catalog'); //Import routes for "catalog" area 
 const compression = require('compression');
 const helmet = require('helmet');
 const gulp = require('gulp');
-var pug = require('gulp-pug');
+const pug = require('gulp-pug');
+
 
 // Create the Express application object
 var app = express();
-var env = require('.env')
+var PORT = process.env.PORT
 // swagger definition
 var swaggerDefinition = {
   info: {
@@ -26,7 +27,7 @@ var swaggerDefinition = {
     version: '1.0.0',
     description: 'Demonstrating how to describe a RESTful API with Swagger',
   },
-  host: 'localhost:3000',
+  host: `localhost:5000`,
   basePath: '/',
 };
 
