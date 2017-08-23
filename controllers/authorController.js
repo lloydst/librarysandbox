@@ -96,7 +96,7 @@ exports.author_delete_get = function(req, res, next) {
     }, function(err, results) {
         if (err) { return next(err); }
         //Successful, so render
-        res.render('author_delete', { title: 'Delete Author', author: results.author, author_books: results.authors_books } );
+        res.render('author_delete', { title: 'Delete Author', author: results.author, author_books: results.authors_books });
     });
 
 };

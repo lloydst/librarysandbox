@@ -8,16 +8,16 @@ const expressValidator = require('express-validator');
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
+
 const index = require('./routes/index');
 const users = require('./routes/users');
 const catalog = require('./routes/catalog'); //Import routes for "catalog" area of site
 const compression = require('compression');
 const helmet = require('helmet');
 
-
-
 // Create the Express application object
 var app = express();
+app.use(helmet());
 var PORT = process.env.PORT
 // swagger definition
 var swaggerDefinition = {
@@ -40,9 +40,6 @@ var options = {
 
 // initialize swagger-jsdoc
 var swaggerSpec = swaggerJSDoc(options);
-
-
-app.use(helmet());
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
@@ -83,9 +80,6 @@ app.get('/api-docs.json', function(req, res) { // line 41
   res.send(swaggerSpec);
 });
 
-
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -103,6 +97,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500)
   res.render('error');
 });
-
 
 module.exports = app;

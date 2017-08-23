@@ -31,7 +31,6 @@ exports.index = function(req, res) {
     });
 };
 
-
 // Display list of all books
 exports.book_list = function(req, res, next) {
 

@@ -377,35 +377,5 @@ router.get('/bookinstance/:id', book_instance_controller.bookinstance_detail);
 /* GET request for list of all BookInstance. */
 router.get('/bookinstances', book_instance_controller.bookinstance_list);
 
-//USER ROUTES
-/**
- * @swagger
- * /user/create:
- *  get:
- *      summary: shows all instances
- *      tags:
- *       - User
- */
-/* GET request for creating a BookInstance. NOTE This must come before route that displays BookInstance (uses id) */
-router.get('/user/create', user_controller.user_create_get);
-
-/* POST request for creating BookInstance. */
-router.post('/user/create', user_controller.user_create_post);
-
-/* GET request to delete BookInstance. */
-router.get('/user/:id/delete', user_controller.user_delete_get);
-
-// POST request to delete BookInstance
-router.post('/user/:id/delete', user_controller.user_delete_post);
-
-/* GET request to update BookInstance. */
-router.get('/user/:id/update', user_controller.user_update_get);
-
-// POST request to update BookInstance
-router.post('/user/:id/update', user_controller.user_update_post);
-
-/* GET request for list of all BookInstance. */
-//router.get('/users', user_controller.user_list);
-
 module.exports = router;
 
