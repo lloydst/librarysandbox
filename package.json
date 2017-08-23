@@ -12,7 +12,6 @@
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 0"
-    
   },
   "dependencies": {
     "async": "^2.1.4",
@@ -33,11 +32,10 @@
     "passport": "^0.3.2",
     "passport-auth0": "^0.6.0",
     "passport-stormpath": "^0.2.4",
-    "pug": "~2.0.0-beta6",
     "serve-favicon": "~2.3.0",
     "static-favicon": "^2.0.0-alpha",
-    "stormpath": "^0.20.1"
-    
+    "stormpath": "^0.20.1",
+    "swagger-ui-express": "^2.0.6"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",

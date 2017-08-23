@@ -378,7 +378,14 @@ router.get('/bookinstance/:id', book_instance_controller.bookinstance_detail);
 router.get('/bookinstances', book_instance_controller.bookinstance_list);
 
 //USER ROUTES
-
+/**
+ * @swagger
+ * /user/create:
+ *  get:
+ *      summary: shows all instances
+ *      tags:
+ *       - User
+ */
 /* GET request for creating a BookInstance. NOTE This must come before route that displays BookInstance (uses id) */
 router.get('/user/create', user_controller.user_create_get);
 
