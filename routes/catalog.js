@@ -1,19 +1,18 @@
 var express = require('express');
 var router = express.Router();
-var passport = require('passport');
 
 // Require our controllers
 var book_controller = require('../controllers/bookController'); 
 var author_controller = require('../controllers/authorController');
 var genre_controller = require('../controllers/genreController');
 var book_instance_controller = require('../controllers/bookinstanceController');
-var user_controller = require('../controllers/userController');
+
 
 /// BOOK ROUTES ///
 /**
- *  @swagger
- *  /:
- *    get:
+ * @swagger
+ * /:
+ *  get:
  *      summary: says hi to the people
  *      operationId: index
  *      responses:
@@ -22,6 +21,36 @@ var user_controller = require('../controllers/userController');
  */
 /* GET catalog home page. */
 router.get('/', book_controller.index);  
+/**
+ * @swagger
+ * /book/create:
+ *  get:
+ *      summary: gets the form to create a book.
+ *      tags:
+ *       - book
+ */
+/* GET request for creating a Book. NOTE This must come before routes that display Book (uses id) */
+router.get('/book/create', book_controller.book_create_get);
+/**
+ * @swagger
+ * /book/create:
+ *  post:
+ *      summary: renders the form in the browser
+ *      tags:
+ *       - book
+ */
+/* POST request for creating Book. */
+router.post('/book/create', book_controller.book_create_post);
+/**
+ * @swagger
+ * /book/:id/delete
+ *  get:
+ *      summary: form to delete the book
+ *      tags:
+ *       - book
+ */
+/* GET request to delete Book. */
+router.get('/book/:id/delete', book_controller.book_delete_get);
 /**
  * @swagger
  * /book/:id/delete:
@@ -45,9 +74,7 @@ router.get('/', book_controller.index);
  *                      schema: 
  *                          type: array
  *                          items: 
- *                              type: string
- *      example:
- *          
+ *                              type: string          
  */
 // POST request to delete Book
 router.post('/book/:id/delete', book_controller.book_delete_post);
