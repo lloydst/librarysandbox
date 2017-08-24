@@ -36,7 +36,27 @@ router.get('/book/create', book_controller.book_create_get);
  *  @swagger
  *  /book/create:
  *    post:
- *      summary: get route for the book create form
+ *      summary: post route for the book create form
+ *      tags:
+ *       - book
+ */
+/* POST request for creating Book. */
+router.post('/book/create', book_controller.book_create_post);
+/**
+ * @swagger
+ * /book/:id/delete:
+ *  get:
+ *      summary: get route to get the delete this book page
+ *      tags:
+ *       - book
+ */
+/* GET request to delete Book. */
+router.get('/book/:id/delete', book_controller.book_delete_get);
+/**
+ * @swagger
+ * /book/:id/delete:
+ *  post:
+ *      summary: get route to get the delete this book page
  *      tags:
  *       - book
  */
