@@ -2,9 +2,6 @@
   "name": "librarysandbox",
   "scripts": {
   },
-  "env": { 
-    "PORT": "3000"
-  },
   "formation": {
   },
   "addons": [
