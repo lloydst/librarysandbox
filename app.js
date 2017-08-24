@@ -1,19 +1,19 @@
-const express = require('express');
-const path = require('path');
-const favicon = require('serve-favicon');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const expressValidator = require('express-validator');
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var expressValidator = require('express-validator');
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 const pug = require('pug')
-const index = require('./routes/index');
-const users = require('./routes/users');
-const catalog = require('./routes/catalog'); //Import routes for "catalog" area of site
-const compression = require('compression');
-const helmet = require('helmet');
+var index = require('./routes/index');
+var users = require('./routes/users');
+var catalog = require('./routes/catalog'); //Import routes for "catalog" area of site
+var compression = require('compression');
+var helmet = require('helmet');
 
 // Create the Express application object
 var app = express();
