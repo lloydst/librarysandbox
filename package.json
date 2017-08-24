@@ -36,11 +36,11 @@
     "serve-favicon": "~2.3.0",
     "static-favicon": "^2.0.0-alpha",
     "stormpath": "^0.20.1",
-    "swagger-ui-express": "^2.0.6"
+    "swagger-ui-express": "^2.0.6",
+    "swagger-jsdoc": "^1.9.7"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
-    "swagger-jsdoc": "^1.9.7",
     "swagger-ui-dist": "^3.1.5"
   }
 }
