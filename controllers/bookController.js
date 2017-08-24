@@ -39,7 +39,6 @@ exports.book_list = function(req, res, next) {
       //Successful, so render
       res.render('book_list', { title: 'Book List', book_list:  list_books});
     });
-
 };
 
 // Display detail page for a specific book

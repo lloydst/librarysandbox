@@ -134,17 +134,21 @@ exports.author_delete_post = function(req, res, next) {
 
 };
 
-// Display Author update form on GET
-exports.author_update_get = function(req, res, next) {
+var debug = require('debug')('author');
 
-    req.sanitize('id').escape();
-    req.sanitize('id').trim();
+// Display Author update form on GET
+exports.author_update_get = function(req, res, next) {   
+    
+    req.sanitize('id').escape().trim();
     Author.findById(req.params.id, function(err, author) {
-        if (err) { return next(err); }
+        if (err) {
+            debug('update error:' + err);
+            return next(err);
+        }
         //On success
         res.render('author_form', { title: 'Update Author', author: author });
-
     });
+
 };
 
 // Handle Author update on POST
