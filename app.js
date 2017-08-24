@@ -8,7 +8,7 @@ const expressValidator = require('express-validator');
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
-
+const pug = require('pug')
 const index = require('./routes/index');
 const users = require('./routes/users');
 const catalog = require('./routes/catalog'); //Import routes for "catalog" area of site

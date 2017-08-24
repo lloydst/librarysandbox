@@ -32,6 +32,7 @@
     "passport": "^0.3.2",
     "passport-auth0": "^0.6.0",
     "passport-stormpath": "^0.2.4",
+    "pug": "^2.0.0-rc.3",
     "serve-favicon": "~2.3.0",
     "static-favicon": "^2.0.0-alpha",
     "stormpath": "^0.20.1",
