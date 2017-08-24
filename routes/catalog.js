@@ -200,7 +200,7 @@ router.post('/author/:id/update', author_controller.author_update_post);
  *       - author
  */
 /* GET request for one Author. */
-router.get('/authors', author_controller.author_detail);
+router.get('/author/:id', author_controller.author_detail);
 /**
  * @swagger
  * /author:
