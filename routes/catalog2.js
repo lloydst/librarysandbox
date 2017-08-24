@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-
-
 // Require our controllers
 var book_controller = require('../controllers/bookController'); 
 var author_controller = require('../controllers/authorController');
@@ -23,22 +21,31 @@ var book_instance_controller = require('../controllers/bookinstanceController');
 /* GET catalog home page. */
 router.get('/', book_controller.index);  
 /**
- *  @swagger
- *  /book/create:
- *    get:
- *      summary: get route for the book create form
+ * @swagger
+ * /book/:id/delete:
+ *  post:
+ *      summary: deletes current book.
  *      tags:
  *       - book
- */
-/* GET request for creating a Book. NOTE This must come before routes that display Book (uses id) */
-router.get('/book/create', book_controller.book_create_get);
-/**
- *  @swagger
- *  /book/create:
- *    post:
- *      summary: get route for the book create form
- *      tags:
- *       - book
+ *       - admin/logged in
+ *      parameter:
+ *          - in: path
+ *            name: id
+ *            required: true
+ *            schema:
+ *              type: integer
+ *      description: gets book by id populates author, genre, from he document
+ *      responses:
+ *          "200":    
+ *              description: Succes!
+ *              content:
+ *                  "application/json":
+ *                      schema: 
+ *                          type: array
+ *                          items: 
+ *                              type: string
+ *      example:
+ *          
  */
 // POST request to delete Book
 router.post('/book/:id/delete', book_controller.book_delete_post);
