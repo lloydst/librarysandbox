@@ -64,7 +64,7 @@ app.use(cookieParser());
 
 app.use(compression()); //Compress all routes
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); // for docs
 
 app.use('/', index);
 app.use('/users', users);
